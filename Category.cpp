@@ -9,21 +9,30 @@ void addTask(std::string t) {
         Task goal(t);
         goals.push_back(goal);
     } else {
-        std::cout<<"Unable to add task, already exists in "<<name<<" category."<<endl;
+        std::cout<<"Unable to add task, already exists in "<<name<<" category."<<std::endl;
     }
     
 }
 
 //method to iterate over goals and print current list under Category
 void printList() {
-    std::cout<<name<<endl;
+    std::cout<<name<<std::endl;
     //call method that underlines the category title depending on letters in name 
     for (const auto task: goals) {
         //call method in Task to print/return string of current task
-        std::cout<<'Calling method in task to print current task'<<endl;
+        std::cout<<'Calling method in task to print current task'<<std::endl;
     }
 }
 //method to delete a Task in goals (make sure to call method that checks if task exists in list before deleting)
+void deleteTasks(int n) {
+    if (goalsEmpty() || n<=0 || n>goals.size()) {
+        std::cout<<"You have no tasks created yet or have entered an invalid number."<<std::endl;
+    }
+    //first we have to loop thru the goals to find the task specified, then erase 
+    auto it=goals.being(); 
+    std::advance(it, n-1); 
+    goals.erase(it);
+}
 
 //method to mark a Task completed 
 
@@ -31,11 +40,7 @@ void printList() {
 
 //method to check if goals is empty 
 bool goalsEmpty() {
-    if (goals.is_empty()) {
-        return true;
-    } else {
-        return false; 
-    }
+    return goals.empty();
 }
 
 //method to check if all Tasks have been completed 
