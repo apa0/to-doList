@@ -22,7 +22,7 @@ class Category {
         Category(std::string n) : name(n) {}
 
         //goals methods
-        void addTasks(std::string);
+        void addTasks(std::string, Date d);
         void deleteTasks(int n);
         void completeTask(); 
         void printList();

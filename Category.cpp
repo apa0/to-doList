@@ -5,10 +5,10 @@
 #include "Category.h"
 
 //method that adds a new Task to goals list, might want to add another parameter to take in a deadline 
-void Category::addTask(std::string t) {
+void Category::addTask(std::string t, Date d) {
     //need to instantiate a task object here
     if (!taskExist(t)) {
-        Task goal(t);
+        Task goal(t, d); //might need to send date here 
         goals.push_back(goal);
     } else {
         std::cout<<"Unable to add task, already exists in "<<name<<" category."<<std::endl;
@@ -23,6 +23,7 @@ void Category::printList() {
     for (const auto task: goals) {
         //call method in Task to print/return string of current task
         std::cout<<'Calling method in task to print current task'<<std::endl;
+        std::cout<<task.getTask();
     }
 }
 //method to delete a Task in goals (make sure to call method that checks if task exists in list before deleting)
