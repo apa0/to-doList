@@ -24,11 +24,11 @@ class Category {
         //goals methods
         void addTasks(std::string);
         void deleteTasks(int n);
-        //void completeTask(); 
+        void completeTask(); 
         void printList();
 
         //error handling methods
-       //bool goalsEmpty();
+        bool goalsEmpty();
         bool taskComplete();
         bool taskExist(std::string);
 
