@@ -3,7 +3,7 @@
 //To-Do List Project: Task.h 
 //Class that contains a task specified by the user and deadline 
 //Must be able to return string of the task getTask(), markComplete(), return deadline, modify deadline and task, 
-//Unsure about whether to have the deadline as a string or as a Date object 
+//Unsure about whether to have the deadline as a string or as a Date object :: currently a date object 
 
 #include <iostream>
 #include <string>
@@ -18,10 +18,10 @@ class Task {
         //default constructor
         Task()=default;
         //constructor 
-        Task(std::string g, Date d): description(g), date(d) completion(false) {}
+        Task(std::string g, Date d): description(g), date(d), completion(false) {}
         void markComplete();
-        //void changeDeadline(); changing Date
-        //void changeTask(); changing description
+        void changeDeadline(); //changing Date
+        void changeTask(); //changing description
 
 
         //Accessor functions: 
